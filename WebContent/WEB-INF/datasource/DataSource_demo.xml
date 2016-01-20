@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- DataSource配置样例，此文件应放在WEB-INF/datasource/ 目录下。 readPreference、writeConcern参数为DB级别的，其它为实例级别的。 
+	readPreference可选值：primary、secondary、secondaryPreferred、primaryPreferred、nearest。 
+	writeConcern可选值：NONE、NORMAL、SAFE、MAJORITY、FSYNC_SAFE、JOURNAL_SAFE、REPLICAS_SAFE。 -->
+<persistence>
+	<persistence-unit name="configuration">
+		 <mongodb url="192.168.22.209:27017" dbname="ossDev" user="kingdeeUser" password="kingdeePsw" connectionsPerHost="50" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="20000" socketTimeout="20000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+	</persistence-unit>
+	
+	<persistence-unit name="oss">
+		 <mongodb url="192.168.22.209:27017" dbname="ossDev" user="kingdeeUser" password="kingdeePsw" connectionsPerHost="50" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="20000" socketTimeout="20000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+	</persistence-unit>
+	
+	<persistence-unit name="sns">
+		 <mongodb url="192.168.22.209:27017" dbname="snsDev" user="kingdeeUser" password="kingdeePsw" connectionsPerHost="50" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="100000" connectTimeout="200000" socketTimeout="0" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+	</persistence-unit>
+	
+	<persistence-unit name="att">
+		 <mongodb url="192.168.22.209:27017" dbname="attDev" user="kingdeeUser" password="kingdeePsw" connectionsPerHost="500" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="10000" socketTimeout="10000" autoConnectRetry="true" readPreference="primaryPreferred"/>
+	</persistence-unit>
+	
+	<!-- Mongo实例2 -->
+	<persistence-unit name="mongoFile">
+		 <mongodb url="192.168.22.209:27017" dbname="kingdeeMongo" user="kingdeeUser" password="kingdeePsw" connectionsPerHost="50" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="20000" socketTimeout="20000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+	</persistence-unit>
+	
+	<!-- Mongo实例3 -->
+	<persistence-unit name="logstat">
+		 <mongodb url="192.168.22.209:27017" dbname="logstat" user="kingdeeUser" password="kingdeePsw"  connectionsPerHost="50" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="20000" socketTimeout="20000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+	</persistence-unit>
+	
+	<persistence-unit name="event">
+		 <mongodb url="192.168.22.209:27017" dbname="eventDev" user="kingdeeUser" password="kingdeePsw" connectionsPerHost="50" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="20000" socketTimeout="20000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+	</persistence-unit>
+	
+	<!-- Mongo实例3 -->
+	<persistence-unit name="deleted">
+		 <mongodb url="192.168.22.209:27017" dbname="deleted" user="kingdeeUser" password="kingdeePsw"   connectionsPerHost="50" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="20000" socketTimeout="20000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+	</persistence-unit>
+	
+		
+        <persistence-unit name="activitystream">
+                 <mongodb url="192.168.22.209:27017" dbname="activitystream" user="kingdeeUser" password="kingdeePsw"  connectionsPerHost="50" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="10000" socketTimeout="10000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+        </persistence-unit>
+        <persistence-unit name="snsUser">
+               <mongodb url="192.168.22.209:27017" dbname="snsUser" user="kingdeeUser" password="kingdeePsw"  connectionsPerHost="200" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="10000" socketTimeout="10000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+         </persistence-unit>
+        <persistence-unit name="message">
+               <mongodb url="192.168.22.209:27017" dbname="message" user="kingdeeUser" password="kingdeePsw"  connectionsPerHost="200" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="10000" socketTimeout="10000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+         </persistence-unit>
+        <persistence-unit name="todo">
+               <mongodb url="192.168.22.209:27017" dbname="todo" user="kingdeeUser" password="kingdeePsw"  connectionsPerHost="200" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="10000" socketTimeout="10000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+         </persistence-unit>
+        <persistence-unit name="shortmail">
+               <mongodb url="192.168.22.209:27017" dbname="shortmail" user="kingdeeUser" password="kingdeePsw"  connectionsPerHost="200" threadsAllowedToBlockForConnectionMultiplier="10" maxWaitTime="10000" connectTimeout="10000" socketTimeout="10000" autoConnectRetry="true" readPreference="secondaryPreferred"/>
+         </persistence-unit>
+	<tenantIDs>
+			<tenantID>demo</tenantID>
+			<tenantID>test</tenantID>
+	</tenantIDs>
+</persistence>
+
+

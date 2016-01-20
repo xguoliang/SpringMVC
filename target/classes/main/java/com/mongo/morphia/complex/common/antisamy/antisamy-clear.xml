@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+	Kingdee SNS clear html
+-->
+
+<anti-samy-rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="antisamy.xsd">
+
+	<directives>
+		<directive name="omitXmlDeclaration" value="false" />
+		<directive name="omitDoctypeDeclaration" value="false" />
+		<directive name="maxInputSize" value="100000" />
+		<directive name="embedStyleSheets" value="false" />
+		<directive name="useXHTML" value="true" />
+		<directive name="formatOutput" value="false" />
+		<directive name="onUnknownTag" value="encode" />
+	</directives>
+
+	<common-regexps>
+	</common-regexps>
+
+	<common-attributes>
+	</common-attributes>
+	
+	<global-tag-attributes>
+	</global-tag-attributes>
+	
+	<tags-to-encode>
+		<tag>g</tag>
+		<tag>grin</tag>
+	</tags-to-encode>
+	
+	<tag-rules>
+		<tag name="html" action="filter"/>
+		<tag name="body" action="filter"/>
+		<tag name="meta" action="filter"/>
+		<tag name="head" action="filter"/>
+		<tag name="title" action="filter"/>
+
+		<!-- Tags related to JavaScript -->
+		<tag name="script" action="filter"/>
+		<tag name="noscript" action="filter"/>
+		
+		<!-- Frame & related tags -->
+		<tag name="iframe" action="filter"/>
+		<tag name="frameset" action="filter"/>
+		<tag name="frame" action="filter"/>
+		
+		<!-- All formatting tags -->
+		<tag name="h1" action="filter"/>
+		<tag name="h2" action="filter"/>
+		<tag name="h3" action="filter"/>
+		<tag name="h4" action="filter"/>
+		<tag name="h5" action="filter"/>
+		<tag name="h6" action="filter"/>
+
+		<tag name="p" action="filter"/>
+		
+		<tag name="i" action="filter"/>
+		<tag name="b" action="filter"/>
+		<tag name="u" action="filter"/>
+		<tag name="strong" action="filter"/>
+		
+		<tag name="em" action="filter"/>
+		<tag name="small" action="filter"/>
+		<tag name="big" action="filter"/>
+		<tag name="pre" action="filter"/>
+		<tag name="code" action="filter"/>
+		<tag name="cite" action="filter"/>
+		<tag name="samp" action="filter"/>
+		<tag name="sub" action="filter"/>
+		<tag name="sup" action="filter"/>
+		<tag name="strike" action="filter"/>
+		<tag name="center" action="filter"/>
+		<tag name="blockquote" action="filter"/>
+		
+		<tag name="hr" action="remove"/>
+		<tag name="br" action="remove"/>
+		
+		<tag name="col" action="filter"/>
+		
+		<tag name="font" action="remove"/>
+
+		<!-- Anchor and anchor related tags -->
+		
+		<tag name="a" action="filter">
+		</tag>
+
+		<tag name="map" action="filter"/>
+		
+		<!-- Stylesheet Tags -->
+		<tag name="style" action="remove">
+		</tag>
+		
+		<tag name="span" action="filter"/>
+		<tag name="div" action="filter">
+		</tag>
+
+	
+		<!-- Image & image related tags -->
+		<tag name="img" action="remove">
+		</tag>
+		<!-- vedio & vedio vedio tags -->
+		<tag name="vedio" action="filter">
+		</tag>
+		<!-- no way to do this safely without hooking up the same code to @import to embed the remote stylesheet (malicious user could change offsite resource to be malicious after validation -->
+		<!-- <attribute name="href" onInvalid="removeTag"/>  -->
+			
+		<tag name="link" action="remove">
+		</tag>
+
+		<!-- List tags -->
+		<tag name="ul" action="filter"/>
+		<tag name="ol" action="filter"/>
+		<tag name="li" action="filter"/>
+		
+		<!-- Dictionary tags -->
+		
+		<tag name="dd" action="filter"/>
+		<tag name="dl" action="filter"/>
+		<tag name="dt" action="filter"/>
+		
+		<!-- Table tags (tbody, thead, tfoot)-->
+		
+		<tag name="thead" action="filter">
+		</tag>
+		
+		<tag name="tbody" action="filter">
+		</tag>
+		
+		<tag name="tfoot" action="filter">
+		</tag>
+		
+		<tag name="table" action="filter">
+		</tag>
+		
+		<tag name="td" action="filter">
+		</tag>
+		
+		<tag name="th" action="filter">
+		</tag>
+		
+		<tag name="tr" action="filter">
+		</tag>
+		
+		<tag name="colgroup" action="filter">
+		</tag>
+		
+		<tag name="col" action="filter">
+		</tag>
+				
+		<tag name="fieldset" action="filter"/>
+		<tag name="legend" action="filter"/>
+
+		<!-- tags for popular Flash embeds -->
+
+		<tag name="object" action="remove">
+		</tag>
+
+		<!-- with filterParamAsEmbed=true, this tag rule also covers <param> name/value pairs -->
+		<tag name="embed" action="remove">
+		</tag>
+		
+	</tag-rules>
+
+
+	<!--  CSS validation processing rules  -->
+
+	<css-rules>
+	</css-rules>
+
+
+    <allowed-empty-tags>
+    </allowed-empty-tags>
+
+</anti-samy-rules>
